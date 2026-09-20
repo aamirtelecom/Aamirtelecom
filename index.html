@@ -24,6 +24,13 @@ footer{margin-top:40px;background:#111827;color:#fff;padding:30px 20px}.footer-i
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:22px;overflow:auto}.overlay.open{display:block}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer}.cart-item{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.total{font-size:21px;font-weight:800;margin:20px 0}.upi{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px;margin:15px 0}.form input{width:100%;padding:12px;margin:6px 0;border:1px solid var(--line);border-radius:9px}
 @media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:30px}.grid{grid-template-columns:repeat(2,1fr)}.photo{height:150px}}
 @media(max-width:480px){.grid{grid-template-columns:1fr}.hero-card{min-height:180px}}
+
+.stepbox{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:#fff}
+.stepbox>b{display:block;margin-bottom:10px}.stepbox label{display:block;margin:8px 0;font-size:14px}
+.upi strong{word-break:break-all}.delivery-flow{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0;line-height:1.9}
+.flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.flow-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:7px}
+.flow-card span{font-size:13px;color:var(--muted);line-height:1.5}
+@media(max-width:760px){.flow-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.flow-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -55,15 +62,77 @@ footer{margin-top:40px;background:#111827;color:#fff;padding:30px 20px}.footer-i
 
 <footer><div class="footer-inner"><div><strong>Aamir Telecom</strong><br><small>Mobile Skins & Accessories</small></div><div><small>WhatsApp: 8918112014<br>UPI: 9614746369@okbizaxis</small></div></div></footer>
 
+
 <div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()">
 <div class="drawer">
-<button class="close" onclick="closeCart()">×</button><h2>Your Cart</h2>
-<div id="cartItems"></div><div class="total">Total: ₹<span id="total">0</span></div>
-<div class="upi"><b>UPI Payment</b><br><small>UPI ID: 9614746369@okbizaxis</small></div>
-<div class="form"><input id="name" placeholder="Your name"><input id="phone" placeholder="Phone number"><input id="address" placeholder="Delivery address"></div>
-<button class="btn wa" onclick="orderWhatsApp()">Order on WhatsApp</button>
-<p class="muted" style="margin-top:12px">Online UPI gateway is not connected yet. UPI ID is shown for manual payment.</p>
+<button class="close" onclick="closeCart()">×</button>
+<h2>Checkout & Delivery</h2>
+<div id="cartItems"></div>
+<div class="total">Total: ₹<span id="total">0</span></div>
+
+<div class="stepbox">
+  <b>1. Payment</b>
+  <label><input type="radio" name="pay" value="UPI" checked onchange="togglePayment()"> UPI Prepaid</label>
+  <label><input type="radio" name="pay" value="COD" onchange="togglePayment()"> Cash on Delivery (COD)</label>
+</div>
+
+<div class="upi" id="upiBox">
+  <b>UPI Payment</b><br>
+  <small>UPI ID: <strong>9614746369@okbizaxis</strong></small>
+  <button class="btn primary" style="margin-top:10px;width:100%" onclick="copyUPI()">Copy UPI ID</button>
+  <small id="copyMsg" style="display:block;margin-top:6px"></small>
+</div>
+
+<div class="stepbox">
+  <b>2. Delivery details</b>
+  <div class="form">
+    <input id="name" placeholder="Full name">
+    <input id="phone" placeholder="Phone number">
+    <input id="address" placeholder="House / Street / Area">
+    <input id="city" placeholder="City">
+    <input id="pin" placeholder="PIN code" inputmode="numeric">
+  </div>
+</div>
+
+<div class="stepbox">
+  <b>3. Send order</b>
+  <button class="btn wa" onclick="orderWhatsApp()">🟢 Send Order on WhatsApp</button>
+  <button class="btn primary" style="margin-top:8px" onclick="makePackingSlip()">🧾 Make Packing Slip</button>
+</div>
+
+<div class="delivery-flow">
+  <b>After order:</b>
+  <div>1️⃣ Order Received</div>
+  <div>2️⃣ Payment Confirmed</div>
+  <div>3️⃣ Packing</div>
+  <div>4️⃣ Shipped + Tracking Number</div>
+  <div>5️⃣ Out for Delivery</div>
+  <div>6️⃣ Delivered</div>
+</div>
+
+<p class="muted">Note: This GitHub website is static. It can send orders to WhatsApp, but it does not automatically create courier shipments or update tracking status. You can use the packing slip and WhatsApp workflow below until a backend/courier integration is added.</p>
 </div></div>
+
+<section class="section" id="seller-flow">
+<h2>📦 Aamir Telecom — Order to Delivery</h2>
+<div class="flow-grid">
+  <div class="flow-card"><b>1️⃣ Order Received</b><span>WhatsApp order check karein.</span></div>
+  <div class="flow-card"><b>2️⃣ Payment</b><span>UPI payment verify karein ya COD mark karein.</span></div>
+  <div class="flow-card"><b>3️⃣ Packing</b><span>Skin ko pouch + cardboard/bubble wrap + courier bag mein pack karein.</span></div>
+  <div class="flow-card"><b>4️⃣ Ship</b><span>Courier ko parcel dein aur AWB/tracking number save karein.</span></div>
+  <div class="flow-card"><b>5️⃣ Customer Update</b><span>WhatsApp par tracking number bhejein.</span></div>
+  <div class="flow-card"><b>6️⃣ Delivered</b><span>Delivery confirm karke order complete mark karein.</span></div>
+</div>
+<div class="note">
+  <b>📋 Packing checklist:</b><br>
+  ☐ Correct phone model / skin checked<br>
+  ☐ Product safely packed<br>
+  ☐ Customer name + address + PIN checked<br>
+  ☐ Payment/COD status checked<br>
+  ☐ Courier booking completed<br>
+  ☐ Tracking number sent to customer
+</div>
+</section>
 
 <script>
 const products=[
@@ -81,10 +150,34 @@ function add(id){let p=products.find(x=>x.id===id),i=cart.findIndex(x=>x.id===id
 function updateCart(){document.getElementById('count').textContent=cart.reduce((a,x)=>a+x.qty,0);document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="cart-item"><div><b>${x.name}</b><br><small>₹${x.price} × ${x.qty}</small></div><div><button onclick="change(${x.id},-1)">−</button> ${x.qty} <button onclick="change(${x.id},1)">+</button></div></div>`).join(''):'<p class="muted">Cart is empty.</p>';document.getElementById('total').textContent=cart.reduce((a,x)=>a+x.price*x.qty,0)}
 function change(id,n){let x=cart.find(x=>x.id===id);if(!x)return;x.qty+=n;if(x.qty<=0)cart=cart.filter(x=>x.id!==id);updateCart()}
 function openCart(){document.getElementById('overlay').classList.add('open');updateCart()}function closeCart(){document.getElementById('overlay').classList.remove('open')}
-function messageFor(items){return `Namaste Aamir Telecom!%0A%0AMujhe ye order karna hai:%0A${items.map(x=>`• ${x.name} × ${x.qty} = ₹${x.price*x.qty}`).join('%0A')}%0A%0ATotal: ₹${items.reduce((a,x)=>a+x.price*x.qty,0)}%0A%0AName: ${encodeURIComponent(document.getElementById('name')?.value||'')}%0APhone: ${encodeURIComponent(document.getElementById('phone')?.value||'')}%0AAddress: ${encodeURIComponent(document.getElementById('address')?.value||'')}`}
-function orderWhatsApp(){if(!cart.length){alert('Cart empty hai.');return}window.open('https://wa.me/918918112014?text='+messageFor(cart),'_blank')}
+function getOrderData(){
+  const pay=document.querySelector('input[name="pay"]:checked')?.value||'UPI';
+  return {name:document.getElementById('name')?.value.trim()||'',phone:document.getElementById('phone')?.value.trim()||'',address:document.getElementById('address')?.value.trim()||'',city:document.getElementById('city')?.value.trim()||'',pin:document.getElementById('pin')?.value.trim()||'',pay};
+}
+function makeOrderId(){return 'AT'+Date.now().toString().slice(-8)}
+function messageFor(items){
+  const d=getOrderData(), id=makeOrderId(), total=items.reduce((a,x)=>a+x.price*x.qty,0);
+  return `Namaste Aamir Telecom!%0A%0AOrder ID: ${id}%0A%0A${items.map(x=>`• ${x.name} × ${x.qty} = ₹${x.price*x.qty}`).join('%0A')}%0A%0ATotal: ₹${total}%0APayment: ${encodeURIComponent(d.pay)}%0A%0AName: ${encodeURIComponent(d.name)}%0APhone: ${encodeURIComponent(d.phone)}%0AAddress: ${encodeURIComponent(d.address)}%0ACity: ${encodeURIComponent(d.city)}%0APIN: ${encodeURIComponent(d.pin)}%0A%0AStatus: Order Received`;
+}
+function validateOrder(){
+  const d=getOrderData();
+  if(!cart.length){alert('Cart empty hai.');return false}
+  if(!d.name||!d.phone||!d.address||!d.city||!d.pin){alert('Name, phone, address, city aur PIN code fill karein.');return false}
+  return true;
+}
+function orderWhatsApp(){if(!validateOrder())return;window.open('https://wa.me/918918112014?text='+messageFor(cart),'_blank')}
+function copyUPI(){navigator.clipboard?.writeText('9614746369@okbizaxis');document.getElementById('copyMsg').textContent='UPI ID copied.'}
+function togglePayment(){const pay=document.querySelector('input[name="pay"]:checked')?.value;document.getElementById('upiBox').style.display=pay==='UPI'?'block':'none'}
+function makePackingSlip(){
+  if(!validateOrder())return;
+  const d=getOrderData(), id=makeOrderId(), total=cart.reduce((a,x)=>a+x.price*x.qty,0);
+  const items=cart.map(x=>`<tr><td>${x.name}</td><td>${x.qty}</td><td>₹${x.price*x.qty}</td></tr>`).join('');
+  const w=window.open('','_blank');
+  w.document.write(`<html><head><title>Aamir Telecom Packing Slip</title><style>body{font-family:Arial;padding:24px;max-width:700px;margin:auto}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:8px;text-align:left}.box{border:1px solid #ddd;padding:14px;margin:12px 0}button{padding:10px 14px}</style></head><body><h1>Aamir Telecom</h1><h2>Packing Slip</h2><div class="box"><b>Order ID:</b> ${id}<br><b>Payment:</b> ${d.pay}<br><b>Status:</b> Packing</div><div class="box"><b>Customer</b><br>${d.name}<br>${d.phone}<br>${d.address}<br>${d.city} - ${d.pin}</div><table><tr><th>Product</th><th>Qty</th><th>Amount</th></tr>${items}<tr><th colspan="2">Total</th><th>₹${total}</th></tr></table><p>☐ Product checked &nbsp; ☐ Packed &nbsp; ☐ Address checked &nbsp; ☐ Courier booked</p><button onclick="window.print()">Print / Save PDF</button></body></html>`);
+  w.document.close();
+}
 function quickOrder(id){let p=products.find(x=>x.id===id);window.open('https://wa.me/918918112014?text='+encodeURIComponent(`Namaste Aamir Telecom! Mujhe "${p.name}" order karna hai. Price: ₹${p.price}.`),'_blank')}
-renderProducts();updateCart();
+renderProducts();updateCart();togglePayment();
 </script>
 </body>
 </html>
