@@ -3,53 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Aamir Telecom | Mobile Accessories</title>
+<meta name="theme-color" content="#2874f0">
+<title>Aamir Telecom — Online Shopping</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#f6f7fb;color:#111827}.top{background:#111827;color:#fff;text-align:center;padding:8px;font-size:13px}.nav{background:#fff;border-bottom:1px solid #e5e7eb;padding:16px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand b{font-size:25px}.brand span{display:block;color:#6b7280;margin-top:3px}.cart{background:#111827;color:white;border:0;border-radius:12px;padding:11px 15px;font-weight:700}.hero{max-width:1100px;margin:18px auto;padding:0 16px}.heroBox{border-radius:24px;padding:28px;background:linear-gradient(135deg,#111827,#243b80);color:white;display:flex;align-items:center;justify-content:space-between;gap:20px}.hero h1{font-size:42px;line-height:1.05;margin:0 0 10px}.hero p{color:#dbeafe;line-height:1.6;max-width:600px}.shop{background:#fff;color:#111827;border:0;border-radius:12px;padding:12px 18px;font-weight:800}.wrap{max-width:1100px;margin:auto;padding:20px 16px}.tools{display:flex;gap:10px;overflow:auto;margin:10px 0 18px}.cat{white-space:nowrap;padding:10px 15px;border:1px solid #e5e7eb;border-radius:999px;background:white}.cat.active{background:#111827;color:#fff}.search{width:100%;padding:14px;border:1px solid #e5e7eb;border-radius:13px;font-size:15px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:white;border:1px solid #e5e7eb;border-radius:18px;overflow:hidden;box-shadow:0 5px 18px #00000008}.pic{height:235px;background:#f1f5f9;display:flex;align-items:center;justify-content:center}.pic img{width:100%;height:100%;object-fit:contain}.info{padding:15px}.tag{font-size:12px;color:#6b7280}.name{font-weight:800;font-size:17px;margin:7px 0}.price{font-size:23px;font-weight:900;margin:8px 0 12px}.buy{width:100%;background:#111827;color:#fff;border:0;border-radius:11px;padding:11px;font-weight:800}.why{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.why div{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px}.why b{display:block;margin-bottom:6px}.why span{color:#6b7280;font-size:14px;line-height:1.5}.footer{background:#111827;color:#fff;margin-top:30px;padding:30px 16px}.footerIn{max-width:1100px;margin:auto;display:flex;justify-content:space-between}.wa{color:#fff}.drawer{position:fixed;right:-430px;top:0;width:min(430px,94vw);height:100%;background:white;z-index:10;padding:20px;box-shadow:-10px 0 30px #0003;transition:.25s;overflow:auto}.drawer.open{right:0}.shade{position:fixed;inset:0;background:#0007;display:none;z-index:9}.shade.open{display:block}.close{float:right;border:0;background:#eee;border-radius:9px;padding:8px}.row{padding:12px 0;border-bottom:1px solid #eee}.checkout{margin-top:20px}.field{width:100%;padding:11px;margin:5px 0;border:1px solid #ddd;border-radius:9px}.whatsapp{width:100%;padding:13px;background:#16a34a;color:white;border:0;border-radius:10px;font-weight:800;margin-top:8px}
-@media(max-width:800px){.grid{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:32px}.why{grid-template-columns:1fr}.pic{height:190px}}
-@media(max-width:480px){.nav{padding:12px}.brand b{font-size:20px}.heroBox{padding:22px}.hero h1{font-size:28px}.grid{gap:10px}.pic{height:155px}.info{padding:11px}.name{font-size:14px}.price{font-size:19px}}
+*{box-sizing:border-box}body{margin:0;background:#f1f3f6;color:#212121;font-family:Arial,Helvetica,sans-serif}.topbar{background:#2874f0;color:#fff;position:sticky;top:0;z-index:30}.nav{max-width:1200px;margin:auto;display:flex;align-items:center;gap:14px;padding:9px 14px}.logo{width:145px;color:#fff;cursor:pointer}.logo b{font-size:22px;font-style:italic}.logo small{display:block;font-size:11px}.search{flex:1;display:flex;background:#fff;border-radius:3px;height:40px}.search input{border:0;outline:0;padding:0 14px;flex:1;font-size:14px}.search button{width:50px;border:0;background:#fff;color:#2874f0;font-size:18px}.login{background:#fff;color:#2874f0;border:0;border-radius:2px;padding:10px 24px;font-weight:bold}.cart{background:transparent;color:#fff;border:0;font-weight:bold;font-size:15px}.categories{background:#fff;box-shadow:0 1px 3px #0002}.catin{max-width:1200px;margin:auto;display:flex;justify-content:space-around;gap:12px;padding:13px 8px;overflow:auto}.cat{border:0;background:#fff;white-space:nowrap;font-weight:bold;font-size:13px}.hero{max-width:1200px;margin:12px auto}.banner{background:linear-gradient(90deg,#fff,#e8f1ff);min-height:230px;display:flex;align-items:center;justify-content:space-between;padding:30px 45px;overflow:hidden}.banner h1{font-size:38px;margin:0 0 8px}.banner p{color:#555}.banner button{background:#2874f0;color:#fff;border:0;padding:12px 22px;font-weight:bold;border-radius:2px}.bannerArt{font-size:100px}.section{max-width:1200px;margin:12px auto;background:#fff}.sectionHead{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;border-bottom:1px solid #eee}.sectionHead h2{margin:0;font-size:20px}.view{color:#2874f0;font-weight:bold;font-size:13px}.products{display:grid;grid-template-columns:repeat(5,1fr);gap:0}.card{padding:16px 13px;border-right:1px solid #eee;min-width:0}.photo{height:190px;display:flex;align-items:center;justify-content:center;background:#fff}.photo img{width:100%;height:100%;object-fit:contain}.brand{font-size:12px;color:#777;margin-top:10px}.pname{font-size:14px;margin:6px 0;height:36px;overflow:hidden}.price{font-size:18px;font-weight:bold}.old{color:#888;text-decoration:line-through;font-size:12px;margin-left:5px}.off{color:#388e3c;font-size:12px;margin-left:5px}.rating{display:inline-block;background:#388e3c;color:#fff;font-size:11px;padding:3px 5px;border-radius:3px;margin-top:7px}.actions{display:flex;gap:6px;margin-top:9px}.actions button{flex:1;border:0;padding:9px 4px;font-weight:bold;border-radius:2px;font-size:12px}.add{background:#ff9f00;color:#fff}.buy{background:#fb641b;color:#fff}.features{max-width:1200px;margin:12px auto;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.feature{background:#fff;padding:18px;text-align:center}.feature b{display:block;margin-bottom:5px}.feature span{font-size:12px;color:#777}.footer{background:#172337;color:#fff;margin-top:20px;padding:30px 18px}.foot{max-width:1200px;margin:auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:25px}.foot h3{color:#878787;font-size:12px}.foot p{font-size:13px;color:#ddd}.drawerBg{display:none;position:fixed;inset:0;background:#0008;z-index:50}.drawerBg.open{display:block}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,94vw);background:#fff;padding:18px;overflow:auto}.close{float:right;border:0;background:#eee;padding:8px;border-radius:3px}.item{padding:14px 0;border-bottom:1px solid #eee}.field{width:100%;padding:11px;margin:5px 0;border:1px solid #ddd}.order{width:100%;padding:13px;border:0;background:#2874f0;color:#fff;font-weight:bold;margin-top:8px}.admin{display:none}
+@media(max-width:900px){.products{grid-template-columns:repeat(3,1fr)}.features{grid-template-columns:repeat(2,1fr)}.login{padding:9px 12px}.logo{width:120px}.bannerArt{font-size:70px}}
+@media(max-width:600px){.nav{gap:7px;padding:8px}.logo{width:82px}.logo b{font-size:17px}.logo small{font-size:8px}.login{padding:8px;font-size:11px}.cart{font-size:12px}.search{height:36px}.search button{width:36px}.catin{justify-content:flex-start}.hero{margin:8px}.banner{min-height:190px;padding:22px}.banner h1{font-size:28px}.bannerArt{display:none}.section{margin:8px}.products{grid-template-columns:repeat(2,1fr)}.card{padding:12px 9px;border-bottom:1px solid #eee}.photo{height:155px}.features{grid-template-columns:1fr 1fr;margin:8px}.feature{padding:12px 7px}.foot{grid-template-columns:1fr}.sectionHead{padding:14px}.sectionHead h2{font-size:17px}}
 </style>
 </head>
 <body>
-<div class="top">📦 Aamir Telecom • Mobile Skins & Accessories • WhatsApp Orders</div>
-<div class="nav"><div class="brand"><b>Aamir Telecom</b><span>Mobile Skins & Accessories</span></div><button class="cart" onclick="openCart()">🛒 Cart (<span id="count">0</span>)</button></div>
+<div class="topbar"><div class="nav">
+<div class="logo" id="secret"><b>Aamir Telecom</b><small>Mobile Accessories</small></div>
+<div class="search"><input id="q" placeholder="Search for products, brands and more" oninput="render()"><button>🔍</button></div>
+<button class="login" onclick="adminLogin()">Login</button>
+<button class="cart" onclick="openCart()">🛒 Cart <span id="count">0</span></button>
+</div></div>
 
-<section class="hero"><div class="heroBox"><div><h1>Accessories<br>you can trust.</h1><p>Quality mobile accessories at simple prices. Choose your product and order directly on WhatsApp.</p><button class="shop" onclick="document.getElementById('products').scrollIntoView()">Shop Now</button></div></div></section>
+<div class="categories"><div class="catin">
+<button class="cat" onclick="setCat('All')">🏠 Home</button>
+<button class="cat" onclick="setCat('Chargers')">🔌 Chargers</button>
+<button class="cat" onclick="setCat('Earphones')">🎧 Earphones</button>
+<button class="cat" onclick="setCat('Cables')">🔗 Cables</button>
+<button class="cat" onclick="setCat('Covers')">📱 Covers</button>
+<button class="cat" onclick="setCat('Accessories')">✨ Accessories</button>
+</div></div>
 
-<main class="wrap" id="products">
-<h2>🔥 Featured Products</h2>
-<input class="search" id="search" placeholder="🔎 Search products..." oninput="render()">
-<div class="tools" id="cats"></div>
-<div class="grid" id="grid"></div>
-</main>
+<section class="hero"><div class="banner"><div><h1>Big Deals on Mobile Accessories</h1><p>Shop smart. Order easily. Get your accessories delivered.</p><button onclick="document.getElementById('products').scrollIntoView()">SHOP NOW</button></div><div class="bannerArt">📱🎧</div></div></section>
 
-<section class="wrap"><h2>Why Aamir Telecom?</h2><div class="why">
-<div><b>📲 WhatsApp Ordering</b><span>Order details directly WhatsApp par bhejein.</span></div>
-<div><b>💵 Easy Payment</b><span>COD aur UPI options available.</span></div>
-<div><b>🚚 Delivery Support</b><span>Order receive hone ke baad delivery updates.</span></div>
-</div></section>
+<section class="section" id="products"><div class="sectionHead"><h2>Deals of the Day</h2><span class="view">Best offers for you</span></div><div class="products" id="grid"></div></section>
 
-<div class="footer"><div class="footerIn"><div><b>Aamir Telecom</b><div>Mobile Skins & Accessories</div></div><div>WhatsApp: <a class="wa" href="https://wa.me/918918112014">8918112014</a><br>UPI: 9614746369@okbizaxis</div></div></div>
+<div class="features">
+<div class="feature"><b>🚚 Fast Delivery</b><span>Easy order & delivery updates</span></div>
+<div class="feature"><b>💵 Cash on Delivery</b><span>COD available</span></div>
+<div class="feature"><b>🛡️ Secure Ordering</b><span>WhatsApp order confirmation</span></div>
+<div class="feature"><b>💬 WhatsApp Support</b><span>8918112014</span></div>
+</div>
 
-<div class="shade" id="shade" onclick="closeCart()"></div><div class="drawer" id="drawer"><button class="close" onclick="closeCart()">✕</button><h2>🛒 Your Cart</h2><div id="items"></div><div class="checkout" id="checkout"></div></div>
+<footer class="footer"><div class="foot">
+<div><b style="font-size:20px">Aamir Telecom</b><p>Mobile Skins & Accessories</p><p>WhatsApp: 8918112014</p></div>
+<div><h3>ABOUT</h3><p>Online mobile accessories store</p><p>Easy ordering</p></div>
+<div><h3>CONTACT</h3><p>WhatsApp: 8918112014</p><p>UPI: 9614746369@okbizaxis</p></div>
+</div></footer>
+
+<div class="drawerBg" id="bg" onclick="if(event.target===this)closeCart()"><div class="drawer"><button class="close" onclick="closeCart()">✕</button><h2>🛒 My Cart</h2><div id="items"></div><div id="checkout"></div></div></div>
 
 <script>
 const product={id:1,name:"Wireless Magnet Headphone",price:550,cat:"Accessories",image:"wireless-magnet-headphone.jpg"};
-let cart=JSON.parse(localStorage.getItem("aamirCart")||"[]"),cat="All";
+let qty=0,active="All";
 function money(n){return "₹"+n.toLocaleString("en-IN")}
-function render(){let q=document.getElementById("search").value.toLowerCase();let show=(cat==="All"||product.cat===cat)&&product.name.toLowerCase().includes(q);
-document.getElementById("cats").innerHTML=["All","Accessories","Chargers","Earphones","Cables","Covers"].map(x=>`<button class="cat ${x===cat?"active":""}" onclick="cat='${x}';render()">${x}</button>`).join("");
-document.getElementById("grid").innerHTML=show?`<div class="card"><div class="pic"><img src="${product.image}" alt="${product.name}"></div><div class="info"><div class="tag">${product.cat}</div><div class="name">${product.name}</div><div class="price">${money(product.price)}</div><button class="buy" onclick="add()">🛒 Add to Cart</button></div></div>`:`<p>No product found.</p>`;update()}
-function add(){cart.length?cart[0].qty++:cart=[{id:1,qty:1}];save();openCart()}
-function save(){localStorage.setItem("aamirCart",JSON.stringify(cart));update()}
-function update(){document.getElementById("count").textContent=cart.reduce((a,b)=>a+b.qty,0)}
-function openCart(){document.getElementById("shade").classList.add("open");document.getElementById("drawer").classList.add("open");drawCart()}
-function closeCart(){document.getElementById("shade").classList.remove("open");document.getElementById("drawer").classList.remove("open")}
-function drawCart(){let q=cart[0]?.qty||0;if(!q){document.getElementById("items").innerHTML="<p>Cart empty hai.</p>";document.getElementById("checkout").innerHTML="";return}
-document.getElementById("items").innerHTML=`<div class="row"><b>${product.name}</b><br>${money(product.price)} × ${q}</div>`;
-document.getElementById("checkout").innerHTML=`<h3>Total: ${money(product.price*q)}</h3><input class="field" id="name" placeholder="Name"><input class="field" id="phone" placeholder="Phone"><input class="field" id="address" placeholder="Delivery Address"><button class="whatsapp" onclick="order()">🟢 Order on WhatsApp</button>`}
-function order(){let n=document.getElementById("name").value,p=document.getElementById("phone").value,a=document.getElementById("address").value;if(!n||!p||!a){alert("Name, phone aur address fill karein.");return}let q=cart[0].qty,t=product.price*q;let msg=`*Aamir Telecom Order*%0A%0A${product.name}%0AQty: ${q}%0ATotal: ${money(t)}%0A%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AAddress: ${encodeURIComponent(a)}`;location.href="https://wa.me/918918112014?text="+msg}
-render();update();
+function setCat(c){active=c;render()}
+function render(){let q=(document.getElementById("q").value||"").toLowerCase();let show=(active==="All"||active===product.cat)&&product.name.toLowerCase().includes(q);
+document.getElementById("grid").innerHTML=show?`<article class="card"><div class="photo"><img src="${product.image}" alt="${product.name}"></div><div class="brand">${product.cat}</div><div class="pname">${product.name}</div><div class="price">${money(product.price)} <span class="old">₹999</span><span class="off">44% off</span></div><span class="rating">4.3 ★</span><div class="actions"><button class="add" onclick="add()">ADD TO CART</button><button class="buy" onclick="buyNow()">BUY NOW</button></div></article>`:`<div style="padding:30px">No products found.</div>`}
+function add(){qty++;update();openCart()}
+function update(){document.getElementById("count").textContent=qty}
+function buyNow(){qty=1;update();openCart()}
+function openCart(){document.getElementById("bg").classList.add("open");draw()}
+function closeCart(){document.getElementById("bg").classList.remove("open")}
+function draw(){if(!qty){document.getElementById("items").innerHTML="<p>Your cart is empty.</p>";document.getElementById("checkout").innerHTML="";return}document.getElementById("items").innerHTML=`<div class="item"><b>${product.name}</b><br>${money(product.price)} × ${qty}</div><p><b>Total: ${money(product.price*qty)}</b></p>`;document.getElementById("checkout").innerHTML=`<input class="field" id="n" placeholder="Name"><input class="field" id="p" placeholder="Phone"><input class="field" id="a" placeholder="Delivery Address"><button class="order" onclick="order()">ORDER ON WHATSAPP</button>`}
+function order(){let n=document.getElementById("n").value,p=document.getElementById("p").value,a=document.getElementById("a").value;if(!n||!p||!a){alert("Name, phone aur address fill karein.");return}let msg=`*Aamir Telecom Order*%0A${product.name}%0AQty: ${qty}%0ATotal: ${money(product.price*qty)}%0AName: ${encodeURIComponent(n)}%0APhone: ${encodeURIComponent(p)}%0AAddress: ${encodeURIComponent(a)}`;location.href="https://wa.me/918918112014?text="+msg}
+function adminLogin(){let pass=prompt("Admin password");if(pass==="1234")alert("Admin panel yahan connect kiya ja sakta hai.");else if(pass!==null)alert("Wrong password")}
+render();
 </script>
 </body>
 </html>
