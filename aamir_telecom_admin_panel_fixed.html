@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aamir Telecom | Mobile Skins & Accessories</title>
+<meta name="description" content="Aamir Telecom - Custom mobile skins, skin membranes and mobile accessories. Order online or via WhatsApp.">
+<style>
+:root{--bg:#f7f8fa;--card:#fff;--text:#111827;--muted:#6b7280;--line:#e5e7eb;--accent:#111827;--green:#16a34a}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text)}
+header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.nav{max-width:1100px;margin:auto;padding:16px 20px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:21px;font-weight:800}.logo span{font-weight:400;color:var(--muted)}
+.cart-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer}
+.hero{max-width:1100px;margin:0 auto;padding:48px 20px 30px;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+.hero h1{font-size:clamp(34px,6vw,58px);line-height:1.02;margin:0 0 16px}.hero p{font-size:18px;color:var(--muted);line-height:1.6}
+.hero-card{background:#111827;color:white;border-radius:24px;padding:30px;min-height:240px;display:flex;flex-direction:column;justify-content:center}
+.hero-card .mock{font-size:70px;text-align:center;margin-bottom:10px}
+.section{max-width:1100px;margin:auto;padding:20px}.section h2{margin:10px 0 20px}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.filter{border:1px solid var(--line);background:#fff;padding:9px 14px;border-radius:999px;cursor:pointer}.filter.active{background:#111827;color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.product{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}.photo{height:190px;background:linear-gradient(135deg,#eef0f3,#dfe3e8);display:flex;align-items:center;justify-content:center;font-size:58px}.info{padding:16px}.info h3{margin:0 0 7px;font-size:17px}.price{font-size:19px;font-weight:800;margin:10px 0}.muted{color:var(--muted);font-size:13px}.actions{display:flex;gap:8px;margin-top:13px}.btn{border:0;border-radius:10px;padding:11px 13px;cursor:pointer;font-weight:700;flex:1}.primary{background:#111827;color:#fff}.wa{background:#dcfce7;color:#166534}
+.note{background:#fff;border:1px dashed #cbd5e1;padding:18px;border-radius:14px;color:#475569;margin:20px 0}
+footer{margin-top:40px;background:#111827;color:#fff;padding:30px 20px}.footer-inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-inner small{color:#cbd5e1}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:20}.drawer{position:absolute;right:0;top:0;height:100%;width:min(430px,100%);background:#fff;padding:22px;overflow:auto}.overlay.open{display:block}.close{float:right;border:0;background:none;font-size:25px;cursor:pointer}.cart-item{padding:13px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:10px}.total{font-size:21px;font-weight:800;margin:20px 0}.upi{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px;margin:15px 0}.form input{width:100%;padding:12px;margin:6px 0;border:1px solid var(--line);border-radius:9px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:30px}.grid{grid-template-columns:repeat(2,1fr)}.photo{height:150px}}
+@media(max-width:480px){.grid{grid-template-columns:1fr}.hero-card{min-height:180px}}
+
+.stepbox{border:1px solid var(--line);border-radius:12px;padding:14px;margin:12px 0;background:#fff}
+.stepbox>b{display:block;margin-bottom:10px}.stepbox label{display:block;margin:8px 0;font-size:14px}
+.upi strong{word-break:break-all}.delivery-flow{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:14px;margin:14px 0;line-height:1.9}
+.flow-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.flow-card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:7px}
+.flow-card span{font-size:13px;color:var(--muted);line-height:1.5}
+@media(max-width:760px){.flow-grid{grid-template-columns:1fr 1fr}}@media(max-width:480px){.flow-grid{grid-template-columns:1fr}}
+
+.admin-btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer;margin-left:8px}
+.admin-panel{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:40;padding:18px;overflow:auto}
+.admin-box{background:#fff;max-width:700px;margin:20px auto;border-radius:18px;padding:20px}
+.admin-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.admin-grid input,.admin-grid select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px}
+.admin-list{margin-top:18px}.admin-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.admin-grid{grid-template-columns:1fr}.admin-row{align-items:flex-start;flex-direction:column}}
+</style>
+</head>
+<body>
+<header><div class="nav"><div class="logo">Aamir Telecom <span>• Skins & Accessories</span></div><div><button class="admin-btn" onclick="openAdmin()">⚙️ Admin</button><button class="cart-btn" onclick="openCart()">🛒 Cart (<span id="count">0</span>)</button></div></div></header>
+
+<section class="hero">
+  <div>
+    <h1>Make Your Phone<br>Look Different.</h1>
+    <p>Custom mobile skins, skin membranes aur useful mobile accessories — simple shopping, easy ordering.</p>
+    <a href="#products"><button class="btn primary" style="flex:0;padding:13px 18px">Shop Now</button></a>
+  </div>
+  <div class="hero-card">
+    <div class="mock">📱✨</div>
+    <strong style="font-size:22px">Custom Mobile Skins</strong>
+    <span style="margin-top:8px;color:#d1d5db">Apne phone ko naya look dein.</span>
+  </div>
+</section>
+
+<section class="section" id="products">
+<h2>Our Products</h2>
+<div class="filters">
+<button class="filter active" onclick="filterProducts('all',this)">All</button>
+<button class="filter" onclick="filterProducts('skin',this)">Mobile Skins</button>
+<button class="filter" onclick="filterProducts('accessory',this)">Accessories</button>
+</div>
+<div class="grid" id="grid"></div>
+<div class="note">📸 Product photos abhi available nahi hain. Ye demo placeholders hain. Aap photos bhej denge to products ko real photos, exact names aur prices ke saath update kiya ja sakta hai.</div>
+</section>
+
+<footer><div class="footer-inner"><div><strong>Aamir Telecom</strong><br><small>Mobile Skins & Accessories</small></div><div><small>WhatsApp: 8918112014<br>UPI: 9614746369@okbizaxis</small></div></div></footer>
+
+
+<div class="overlay" id="overlay" onclick="if(event.target===this)closeCart()">
+<div class="drawer">
+<button class="close" onclick="closeCart()">×</button>
+<h2>Checkout & Delivery</h2>
+<div id="cartItems"></div>
+<div class="total">Total: ₹<span id="total">0</span></div>
+
+<div class="stepbox">
+  <b>1. Payment</b>
+  <label><input type="radio" name="pay" value="UPI" checked onchange="togglePayment()"> UPI Prepaid</label>
+  <label><input type="radio" name="pay" value="COD" onchange="togglePayment()"> Cash on Delivery (COD)</label>
+</div>
+
+<div class="upi" id="upiBox">
+  <b>UPI Payment</b><br>
+  <small>UPI ID: <strong>9614746369@okbizaxis</strong></small>
+  <button class="btn primary" style="margin-top:10px;width:100%" onclick="copyUPI()">Copy UPI ID</button>
+  <small id="copyMsg" style="display:block;margin-top:6px"></small>
+</div>
+
+<div class="stepbox">
+  <b>2. Delivery details</b>
+  <div class="form">
+    <input id="name" placeholder="Full name">
+    <input id="phone" placeholder="Phone number">
+    <input id="address" placeholder="House / Street / Area">
+    <input id="city" placeholder="City">
+    <input id="pin" placeholder="PIN code" inputmode="numeric">
+  </div>
+</div>
+
+<div class="stepbox">
+  <b>3. Send order</b>
+  <button class="btn wa" onclick="orderWhatsApp()">🟢 Send Order on WhatsApp</button>
+  <button class="btn primary" style="margin-top:8px" onclick="makePackingSlip()">🧾 Make Packing Slip</button>
+</div>
+
+<div class="delivery-flow">
+  <b>After order:</b>
+  <div>1️⃣ Order Received</div>
+  <div>2️⃣ Payment Confirmed</div>
+  <div>3️⃣ Packing</div>
+  <div>4️⃣ Shipped + Tracking Number</div>
+  <div>5️⃣ Out for Delivery</div>
+  <div>6️⃣ Delivered</div>
+</div>
+
+<p class="muted">Note: This GitHub website is static. It can send orders to WhatsApp, but it does not automatically create courier shipments or update tracking status. You can use the packing slip and WhatsApp workflow below until a backend/courier integration is added.</p>
+</div></div>
+
+<section class="section" id="seller-flow">
+<h2>📦 Aamir Telecom — Order to Delivery</h2>
+<div class="flow-grid">
+  <div class="flow-card"><b>1️⃣ Order Received</b><span>WhatsApp order check karein.</span></div>
+  <div class="flow-card"><b>2️⃣ Payment</b><span>UPI payment verify karein ya COD mark karein.</span></div>
+  <div class="flow-card"><b>3️⃣ Packing</b><span>Skin ko pouch + cardboard/bubble wrap + courier bag mein pack karein.</span></div>
+  <div class="flow-card"><b>4️⃣ Ship</b><span>Courier ko parcel dein aur AWB/tracking number save karein.</span></div>
+  <div class="flow-card"><b>5️⃣ Customer Update</b><span>WhatsApp par tracking number bhejein.</span></div>
+  <div class="flow-card"><b>6️⃣ Delivered</b><span>Delivery confirm karke order complete mark karein.</span></div>
+</div>
+<div class="note">
+  <b>📋 Packing checklist:</b><br>
+  ☐ Correct phone model / skin checked<br>
+  ☐ Product safely packed<br>
+  ☐ Customer name + address + PIN checked<br>
+  ☐ Payment/COD status checked<br>
+  ☐ Courier booking completed<br>
+  ☐ Tracking number sent to customer
+</div>
+</section>
+
+<script>
+const defaultProducts=[
+{id:1,name:"Custom Mobile Skin",cat:"skin",price:199,icon:"📱"},
+{id:2,name:"Premium Skin Membrane",cat:"skin",price:249,icon:"✨"},
+{id:3,name:"Transparent Phone Case",cat:"accessory",price:149,icon:"📱"},
+{id:4,name:"Fast Charging Cable",cat:"accessory",price:199,icon:"🔌"},
+{id:5,name:"Mobile Charger",cat:"accessory",price:349,icon:"⚡"},
+{id:6,name:"Tempered Glass",cat:"accessory",price:99,icon:"🛡️"}
+];
+let products=JSON.parse(localStorage.getItem('aamirProducts')||'null')||defaultProducts;
+let cart=[];
+function renderProducts(list=products){document.getElementById('grid').innerHTML=list.map(p=>`<article class="product"><div class="photo">${p.photo?`<img src="${p.photo}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover">`:p.icon}</div><div class="info"><h3>${p.name}</h3><div class="muted">${p.cat==='skin'?'Custom skin / membrane':'Mobile accessory'}</div><div class="price">₹${p.price}</div><div class="actions"><button class="btn primary" onclick="add(${p.id})">Add to Cart</button><button class="btn wa" onclick="quickOrder(${p.id})">WhatsApp</button></div></div></article>`).join('')}
+function filterProducts(cat,el){document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));el.classList.add('active');renderProducts(cat==='all'?products:products.filter(p=>p.cat===cat))}
+function add(id){let p=products.find(x=>x.id===id),i=cart.findIndex(x=>x.id===id);if(i>=0)cart[i].qty++;else cart.push({...p,qty:1});updateCart();openCart()}
+function updateCart(){document.getElementById('count').textContent=cart.reduce((a,x)=>a+x.qty,0);document.getElementById('cartItems').innerHTML=cart.length?cart.map(x=>`<div class="cart-item"><div><b>${x.name}</b><br><small>₹${x.price} × ${x.qty}</small></div><div><button onclick="change(${x.id},-1)">−</button> ${x.qty} <button onclick="change(${x.id},1)">+</button></div></div>`).join(''):'<p class="muted">Cart is empty.</p>';document.getElementById('total').textContent=cart.reduce((a,x)=>a+x.price*x.qty,0)}
+function change(id,n){let x=cart.find(x=>x.id===id);if(!x)return;x.qty+=n;if(x.qty<=0)cart=cart.filter(x=>x.id!==id);updateCart()}
+function openCart(){document.getElementById('overlay').classList.add('open');updateCart()}function closeCart(){document.getElementById('overlay').classList.remove('open')}
+function getOrderData(){
+  const pay=document.querySelector('input[name="pay"]:checked')?.value||'UPI';
+  return {name:document.getElementById('name')?.value.trim()||'',phone:document.getElementById('phone')?.value.trim()||'',address:document.getElementById('address')?.value.trim()||'',city:document.getElementById('city')?.value.trim()||'',pin:document.getElementById('pin')?.value.trim()||'',pay};
+}
+function makeOrderId(){return 'AT'+Date.now().toString().slice(-8)}
+function messageFor(items){
+  const d=getOrderData(), id=makeOrderId(), total=items.reduce((a,x)=>a+x.price*x.qty,0);
+  return `Namaste Aamir Telecom!%0A%0AOrder ID: ${id}%0A%0A${items.map(x=>`• ${x.name} × ${x.qty} = ₹${x.price*x.qty}`).join('%0A')}%0A%0ATotal: ₹${total}%0APayment: ${encodeURIComponent(d.pay)}%0A%0AName: ${encodeURIComponent(d.name)}%0APhone: ${encodeURIComponent(d.phone)}%0AAddress: ${encodeURIComponent(d.address)}%0ACity: ${encodeURIComponent(d.city)}%0APIN: ${encodeURIComponent(d.pin)}%0A%0AStatus: Order Received`;
+}
+function validateOrder(){
+  const d=getOrderData();
+  if(!cart.length){alert('Cart empty hai.');return false}
+  if(!d.name||!d.phone||!d.address||!d.city||!d.pin){alert('Name, phone, address, city aur PIN code fill karein.');return false}
+  return true;
+}
+function orderWhatsApp(){if(!validateOrder())return;window.open('https://wa.me/918918112014?text='+messageFor(cart),'_blank')}
+function copyUPI(){navigator.clipboard?.writeText('9614746369@okbizaxis');document.getElementById('copyMsg').textContent='UPI ID copied.'}
+function togglePayment(){const pay=document.querySelector('input[name="pay"]:checked')?.value;document.getElementById('upiBox').style.display=pay==='UPI'?'block':'none'}
+function makePackingSlip(){
+  if(!validateOrder())return;
+  const d=getOrderData(), id=makeOrderId(), total=cart.reduce((a,x)=>a+x.price*x.qty,0);
+  const items=cart.map(x=>`<tr><td>${x.name}</td><td>${x.qty}</td><td>₹${x.price*x.qty}</td></tr>`).join('');
+  const w=window.open('','_blank');
+  w.document.write(`<html><head><title>Aamir Telecom Packing Slip</title><style>body{font-family:Arial;padding:24px;max-width:700px;margin:auto}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:8px;text-align:left}.box{border:1px solid #ddd;padding:14px;margin:12px 0}button{padding:10px 14px}</style></head><body><h1>Aamir Telecom</h1><h2>Packing Slip</h2><div class="box"><b>Order ID:</b> ${id}<br><b>Payment:</b> ${d.pay}<br><b>Status:</b> Packing</div><div class="box"><b>Customer</b><br>${d.name}<br>${d.phone}<br>${d.address}<br>${d.city} - ${d.pin}</div><table><tr><th>Product</th><th>Qty</th><th>Amount</th></tr>${items}<tr><th colspan="2">Total</th><th>₹${total}</th></tr></table><p>☐ Product checked &nbsp; ☐ Packed &nbsp; ☐ Address checked &nbsp; ☐ Courier booked</p><button onclick="window.print()">Print / Save PDF</button>
+</script>
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-box">
+    <button class="close" onclick="closeAdmin()">×</button>
+    <h2>⚙️ Product Admin</h2>
+    <p class="muted">Mobile se product add/delete kar sakte hain. Is version me changes isi browser me save hote hain.</p>
+    <div class="stepbox">
+      <b>Admin Login</b>
+      <input id="adminPass" type="password" placeholder="Admin password" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:9px">
+      <button class="btn primary" style="margin-top:8px" onclick="adminLogin()">Login</button>
+      <small id="adminMsg" style="display:block;margin-top:8px"></small>
+    </div>
+    <div id="adminContent" style="display:none">
+      <div class="stepbox">
+        <b>Add Product</b>
+        <div class="admin-grid">
+          <input id="apName" placeholder="Product name">
+          <input id="apPrice" type="number" placeholder="Price ₹">
+          <select id="apCat"><option value="skin">Mobile Skin</option><option value="accessory">Accessory</option></select>
+          <input id="apIcon" placeholder="Emoji e.g. 📱">
+          <input id="apPhoto" placeholder="Photo URL (optional)">
+        </div>
+        <button class="btn primary" style="margin-top:10px" onclick="adminAddProduct()">➕ Add Product</button>
+      </div>
+      <div class="stepbox">
+        <b>Current Products</b>
+        <div id="adminList" class="admin-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>`);
+  w.document.close();
+}
+function quickOrder(id){let p=products.find(x=>x.id===id);window.open('https://wa.me/918918112014?text='+encodeURIComponent(`Namaste Aamir Telecom! Mujhe "${p.name}" order karna hai. Price: ₹${p.price}.`),'_blank')}
+renderProducts();updateCart();togglePayment();
+
+const ADMIN_PASSWORD="1234";
+function openAdmin(){document.getElementById('adminPanel').style.display='block'}
+function closeAdmin(){document.getElementById('adminPanel').style.display='none'}
+function adminLogin(){
+ const p=document.getElementById('adminPass').value;
+ if(p===ADMIN_PASSWORD){document.getElementById('adminContent').style.display='block';document.getElementById('adminMsg').textContent='Login successful.';renderAdminList()}
+ else document.getElementById('adminMsg').textContent='Wrong password.'
+}
+function saveProducts(){localStorage.setItem('aamirProducts',JSON.stringify(products));renderProducts();renderAdminList()}
+function adminAddProduct(){
+ const name=document.getElementById('apName').value.trim(), price=Number(document.getElementById('apPrice').value);
+ const cat=document.getElementById('apCat').value, icon=document.getElementById('apIcon').value.trim()||'📱', photo=document.getElementById('apPhoto').value.trim();
+ if(!name||!price){alert('Product name aur price bharein.');return}
+ products.push({id:Date.now(),name,price,cat,icon,photo});saveProducts();
+ ['apName','apPrice','apIcon','apPhoto'].forEach(id=>document.getElementById(id).value='')
+}
+function adminDeleteProduct(id){if(confirm('Is product ko delete karein?')){products=products.filter(p=>p.id!==id);saveProducts()}}
+function renderAdminList(){document.getElementById('adminList').innerHTML=products.map(p=>`<div class="admin-row"><div><b>${p.name}</b><br><small>₹${p.price} · ${p.cat}</small></div><button class="btn" onclick="adminDeleteProduct(${p.id})">🗑️ Delete</button></div>`).join('')}
+
+</body>
+</html>
