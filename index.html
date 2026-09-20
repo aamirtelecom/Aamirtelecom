@@ -141,6 +141,37 @@ footer{margin-top:40px;background:#111827;color:#fff;padding:30px 20px}.footer-i
 </div>
 </section>
 
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-box">
+    <button class="close" onclick="closeAdmin()">×</button>
+    <h2>⚙️ Product Admin</h2>
+    <p class="muted">Mobile se product add/delete kar sakte hain. Is version me changes isi browser me save hote hain.</p>
+    <div class="stepbox">
+      <b>Admin Login</b>
+      <input id="adminPass" type="password" placeholder="Admin password" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:9px">
+      <button class="btn primary" style="margin-top:8px" onclick="adminLogin()">Login</button>
+      <small id="adminMsg" style="display:block;margin-top:8px"></small>
+    </div>
+    <div id="adminContent" style="display:none">
+      <div class="stepbox">
+        <b>Add Product</b>
+        <div class="admin-grid">
+          <input id="apName" placeholder="Product name">
+          <input id="apPrice" type="number" placeholder="Price ₹">
+          <select id="apCat"><option value="skin">Mobile Skin</option><option value="accessory">Accessory</option></select>
+          <input id="apIcon" placeholder="Emoji e.g. 📱">
+          <input id="apPhoto" placeholder="Photo URL (optional)">
+        </div>
+        <button class="btn primary" style="margin-top:10px" onclick="adminAddProduct()">➕ Add Product</button>
+      </div>
+      <div class="stepbox">
+        <b>Current Products</b>
+        <div id="adminList" class="admin-list"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
 <script>
 const defaultProducts=[
 {id:1,name:"Custom Mobile Skin",cat:"skin",price:199,icon:"📱"},
@@ -182,37 +213,6 @@ function makePackingSlip(){
   const items=cart.map(x=>`<tr><td>${x.name}</td><td>${x.qty}</td><td>₹${x.price*x.qty}</td></tr>`).join('');
   const w=window.open('','_blank');
   w.document.write(`<html><head><title>Aamir Telecom Packing Slip</title><style>body{font-family:Arial;padding:24px;max-width:700px;margin:auto}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ccc;padding:8px;text-align:left}.box{border:1px solid #ddd;padding:14px;margin:12px 0}button{padding:10px 14px}</style></head><body><h1>Aamir Telecom</h1><h2>Packing Slip</h2><div class="box"><b>Order ID:</b> ${id}<br><b>Payment:</b> ${d.pay}<br><b>Status:</b> Packing</div><div class="box"><b>Customer</b><br>${d.name}<br>${d.phone}<br>${d.address}<br>${d.city} - ${d.pin}</div><table><tr><th>Product</th><th>Qty</th><th>Amount</th></tr>${items}<tr><th colspan="2">Total</th><th>₹${total}</th></tr></table><p>☐ Product checked &nbsp; ☐ Packed &nbsp; ☐ Address checked &nbsp; ☐ Courier booked</p><button onclick="window.print()">Print / Save PDF</button>
-<div class="admin-panel" id="adminPanel">
-  <div class="admin-box">
-    <button class="close" onclick="closeAdmin()">×</button>
-    <h2>⚙️ Product Admin</h2>
-    <p class="muted">Mobile se product add/delete kar sakte hain. Is version me changes isi browser me save hote hain.</p>
-    <div class="stepbox">
-      <b>Admin Login</b>
-      <input id="adminPass" type="password" placeholder="Admin password" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:9px">
-      <button class="btn primary" style="margin-top:8px" onclick="adminLogin()">Login</button>
-      <small id="adminMsg" style="display:block;margin-top:8px"></small>
-    </div>
-    <div id="adminContent" style="display:none">
-      <div class="stepbox">
-        <b>Add Product</b>
-        <div class="admin-grid">
-          <input id="apName" placeholder="Product name">
-          <input id="apPrice" type="number" placeholder="Price ₹">
-          <select id="apCat"><option value="skin">Mobile Skin</option><option value="accessory">Accessory</option></select>
-          <input id="apIcon" placeholder="Emoji e.g. 📱">
-          <input id="apPhoto" placeholder="Photo URL (optional)">
-        </div>
-        <button class="btn primary" style="margin-top:10px" onclick="adminAddProduct()">➕ Add Product</button>
-      </div>
-      <div class="stepbox">
-        <b>Current Products</b>
-        <div id="adminList" class="admin-list"></div>
-      </div>
-    </div>
-  </div>
-</div>
-</body></html>`);
   w.document.close();
 }
 function quickOrder(id){let p=products.find(x=>x.id===id);window.open('https://wa.me/918918112014?text='+encodeURIComponent(`Namaste Aamir Telecom! Mujhe "${p.name}" order karna hai. Price: ₹${p.price}.`),'_blank')}
@@ -236,6 +236,7 @@ function adminAddProduct(){
 }
 function adminDeleteProduct(id){if(confirm('Is product ko delete karein?')){products=products.filter(p=>p.id!==id);saveProducts()}}
 function renderAdminList(){document.getElementById('adminList').innerHTML=products.map(p=>`<div class="admin-row"><div><b>${p.name}</b><br><small>₹${p.price} · ${p.cat}</small></div><button class="btn" onclick="adminDeleteProduct(${p.id})">🗑️ Delete</button></div>`).join('')}
+
 </script>
 </body>
 </html>
